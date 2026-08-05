@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>REGAL VIVES｜司法試験の模試と法律記事のサブスクリプション</title>
+<meta name="description" content="REGAL VIVES（リーガル ヴィヴェス）は、司法試験受験生のためのサブスクリプションサービスです。継続的な模試で現在の立ち位置を明確にし、法律に特化した記事プラットフォームで学びを深めます。月額500円から。">
+<link rel="stylesheet" href="css/style.css">
+<!-- JSが有効なときだけオープニングを出す（無効時に幕が残らないようにする） -->
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<!-- ============ 0. オープニング（スプラッシュ） ============ -->
+<div class="splash" id="splash" aria-hidden="true">
+  <div class="splash__curtain splash__curtain--back"></div>
+  <div class="splash__curtain splash__curtain--front"></div>
+
+  <div class="splash__inner">
+    <span class="splash__mark">RV</span>
+    <p class="splash__word">
+      <span>R</span><span>E</span><span>G</span><span>A</span><span>L</span>
+      <span class="splash__space">&nbsp;</span>
+      <span>V</span><span>I</span><span>V</span><span>E</span><span>S</span>
+    </p>
+    <span class="splash__line"></span>
+    <p class="splash__tagline">Bar Exam Platform</p>
+  </div>
+</div>
+
+<a class="skip-link" href="#main">本文へスキップ</a>
+
+<!-- ============ ヘッダー ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="container site-header__inner">
+    <a class="logo" href="#hero">
+      <span class="logo__mark" aria-hidden="true">RV</span>
+      <span class="logo__text">
+        <strong>REGAL VIVES</strong>
+        <small>Bar Exam Platform</small>
+      </span>
+    </a>
+
+    <nav class="gnav" id="gnav" aria-label="メインナビゲーション">
+      <ul class="gnav__list">
+        <!-- マイページはログイン後の画面。実装時に /mypage などへ差し替えてください -->
+        <li><a href="#">マイページ</a></li>
+        <li><a href="#news">お知らせ</a></li>
+        <li><a href="#articles">記事</a></li>
+        <li><a href="community.html">コミュニティ</a></li>
+
+        <!-- ドロワー内だけに表示される補助リンク（PCではフッターに集約） -->
+        <li class="gnav__sub">
+          <a href="#concept">コンセプト</a>
+          <a href="#exams">模試</a>
+          <a href="#plans">料金プラン</a>
+          <a href="#company">会社情報</a>
+        </li>
+
+        <li class="gnav__cta"><a href="#plans" class="btn btn--sm btn--solid">登録する</a></li>
+      </ul>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="gnav">
+      <span class="nav-toggle__bars" aria-hidden="true"></span>
+      <span class="sr-only">メニューを開く</span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ 1. ヒーロー ============ -->
+  <section class="hero" id="hero">
+    <div class="container hero__inner">
+
+      <div class="hero__body">
+        <p class="eyebrow">Bar Exam Platform</p>
+        <h1 class="hero__title">
+          司法試験に関する<br>
+          <em>すべての不安</em>を解消する。
+        </h1>
+        <p class="hero__lead">
+          継続的な模試で、いまの立ち位置を数字で明らかに。<br>
+          法律に特化した記事プラットフォームで、学びを深く。<br>
+          必要なものはすべて、月額500円のサブスクリプションに。
+        </p>
+
+        <div class="hero__actions">
+          <a href="#plans" class="btn btn--solid">月額500円ではじめる</a>
+          <a href="#concept" class="btn btn--ghost">サービスを見る</a>
+        </div>
+
+        <dl class="hero__stats">
+          <div class="stat">
+            <dt>月額</dt>
+            <dd><span>500</span>円〜</dd>
+          </div>
+          <div class="stat">
+            <dt>公開記事</dt>
+            <dd><span>4,800</span>本</dd>
+          </div>
+          <div class="stat">
+            <dt>登録者</dt>
+            <dd><span>400</span>名</dd>
+          </div>
+        </dl>
+      </div>
+
+      <!-- トップ画像：写真に差し替える場合は src を images/hero.jpg などに変更してください -->
+      <figure class="hero__media">
+        <img src="images/hero.svg" alt="REGAL VIVES のロゴ"
+             width="800" height="1000" fetchpriority="high" decoding="async">
+        <span class="hero__badge">初月無料キャンペーン中</span>
+      </figure>
+
+    </div>
+  </section>
+
+  <!-- ============ 2. コンセプト ============ -->
+  <section class="section section--soft" id="concept">
+    <div class="container">
+      <header class="section__head">
+        <p class="eyebrow">Concept</p>
+        <h2 class="section__title">「手応え」ではなく、<br class="br-sp">データで現在地を知る。</h2>
+        <p class="section__lead">
+          司法試験の勉強でいちばん難しいのは、自分がいまどこにいるのかを知ることです。
+          REGAL VIVES は「継続的な模試」と「法律記事のプラットフォーム」という
+          2つの機能だけに絞り、その不確かさを取り除きます。
+        </p>
+      </header>
+
+      <ul class="feature-grid feature-grid--2">
+        <li class="feature">
+          <span class="feature__num" aria-hidden="true">01</span>
+          <h3 class="feature__title">継続的な模試で、現在の立ち位置を明確にする</h3>
+          <p class="feature__text">
+            一度きりの模試では、実力が伸びているのか止まっているのか分かりません。
+            REGAL VIVES は毎月同じ基準で模試を実施し、順位・偏差値・科目別の到達度を
+            時系列で記録します。合格ラインまでの距離が、常に数字で見える状態になります。
+          </p>
+        </li>
+        <li class="feature">
+          <span class="feature__num" aria-hidden="true">02</span>
+          <h3 class="feature__title">法律記事に特化したプラットフォーム</h3>
+          <p class="feature__text">
+            実務家・合格者・受験生が書いた法律の記事だけが集まる場所です。
+            誰でも書いて公開でき、判例・条文・論点から記事をたどれます。
+            汎用のブログサービスに散らばっていた知見を、一箇所に集約します。
+          </p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 3. サービス ============ -->
+  <section class="section" id="services">
+    <div class="container">
+      <header class="section__head">
+        <p class="eyebrow">Service</p>
+        <h2 class="section__title">できること</h2>
+        <p class="section__lead">
+          すべての機能が、ひとつのサブスクリプションに含まれます。
+          プランによる機能の違いはありません。
+        </p>
+      </header>
+
+      <div class="service-grid">
+
+        <!-- 模試 -->
+        <article class="service service--featured" id="exams">
+          <p class="service__tag">模試</p>
+          <h3 class="service__title">全国司法試験模試</h3>
+          <p class="service__desc">
+            短答・論文の両方を本番形式で毎月実施。同じ採点基準で継続的に受け続けることで、
+            実力の推移がそのままグラフになります。
+          </p>
+          <ul class="service__list">
+            <li>短答式・論文式の模試を毎月実施</li>
+            <li>全国順位・偏差値・科目別の到達度を判定</li>
+            <li>受験回ごとの推移を記録するダッシュボード</li>
+            <li>論文答案の添削（月2通まで）</li>
+          </ul>
+          <a href="#plans" class="btn btn--solid btn--block">登録して模試を受ける</a>
+        </article>
+
+        <!-- 記事 -->
+        <article class="service" id="articles">
+          <p class="service__tag">記事</p>
+          <h3 class="service__title">法律記事プラットフォーム</h3>
+          <p class="service__desc">
+            法律の記事だけを扱う投稿・閲覧プラットフォーム。読むだけでなく、
+            自分の理解を記事として書き残すこともできます。
+          </p>
+          <ul class="service__list">
+            <li>公開記事 4,800本（判例・論点・学習法）</li>
+            <li>条文・判例番号からの横断検索</li>
+            <li>誰でも投稿できるエディタとタグ機能</li>
+            <li>フォロー・ブックマーク・読了管理</li>
+          </ul>
+          <a href="#plans" class="btn btn--outline btn--block">記事を読みはじめる</a>
+        </article>
+
+        <!-- コミュニティ -->
+        <article class="service" id="community">
+          <p class="service__tag">コミュニティ</p>
+          <h3 class="service__title">匿名オープンチャット</h3>
+          <p class="service__desc">
+            登録するのは大学・大学院名とニックネームの2つだけ。本名もメールアドレスも要りません。
+            同じ試験を目指す人たちが、いつでも書き込める場所です。
+          </p>
+          <ul class="service__list">
+            <li>登録は大学・大学院名とニックネームのみ</li>
+            <li>科目別・目的別のルーム 全6室</li>
+            <li>24時間いつでも書き込める</li>
+            <li>合格者が常駐するルームあり</li>
+          </ul>
+          <a href="community.html" class="btn btn--outline btn--block">チャットを開く</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. お知らせ ============ -->
+  <section class="section section--soft" id="news">
+    <div class="container">
+      <div class="news">
+
+        <header class="section__head section__head--left">
+          <p class="eyebrow">News</p>
+          <h2 class="section__title">お知らせ</h2>
+          <p class="section__lead">
+            模試の日程、機能のアップデート、コミュニティの開催情報をお知らせします。
+          </p>
+          <a href="#" class="news__more">お知らせ一覧を見る</a>
+        </header>
+
+        <ul class="news__list">
+          <li class="news__item">
+            <a href="#">
+              <time datetime="2026-08-01">2026.08.01</time>
+              <span class="news__cat">模試</span>
+              <span class="news__text">2026年度 第3回 全国司法試験模試の申込受付を開始しました</span>
+            </a>
+          </li>
+          <li class="news__item">
+            <a href="#">
+              <time datetime="2026-07-18">2026.07.18</time>
+              <span class="news__cat">記事</span>
+              <span class="news__text">特集「令和8年司法試験 論文式 出題趣旨を読む」を公開しました</span>
+            </a>
+          </li>
+          <li class="news__item">
+            <a href="#">
+              <time datetime="2026-07-02">2026.07.02</time>
+              <span class="news__cat">アップデート</span>
+              <span class="news__text">記事エディタに、条文へのリンクを自動生成する機能を追加しました</span>
+            </a>
+          </li>
+          <li class="news__item">
+            <a href="#">
+              <time datetime="2026-06-20">2026.06.20</time>
+              <span class="news__cat">コミュニティ</span>
+              <span class="news__text">予備試験合格者によるオンライン座談会を開催しました</span>
+            </a>
+          </li>
+          <li class="news__item">
+            <a href="#">
+              <time datetime="2026-06-05">2026.06.05</time>
+              <span class="news__cat">お知らせ</span>
+              <span class="news__text">年間プラン（4,500円）の提供を開始しました</span>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. 料金プラン ============ -->
+  <section class="section" id="plans">
+    <div class="container">
+      <header class="section__head">
+        <p class="eyebrow">Plans</p>
+        <h2 class="section__title">料金プラン</h2>
+        <p class="section__lead">
+          全プランで使える機能は同じです。契約期間が長いほど、月あたりの料金が下がります。
+        </p>
+      </header>
+
+      <div class="plan-grid">
+
+        <article class="plan">
+          <h3 class="plan__name">1ヶ月プラン</h3>
+          <p class="plan__price"><span class="plan__num">500</span><small>円 / 月</small></p>
+          <p class="plan__unit">月あたり 500円</p>
+          <p class="plan__note">毎月自動更新。いつでも解約できます。</p>
+          <a href="#" class="btn btn--outline btn--block">このプランで登録</a>
+        </article>
+
+        <article class="plan">
+          <h3 class="plan__name">3ヶ月プラン</h3>
+          <p class="plan__price"><span class="plan__num">1,500</span><small>円 / 3ヶ月</small></p>
+          <p class="plan__unit">月あたり 500円</p>
+          <p class="plan__note">模試3回分をまとめて受けられる期間です。</p>
+          <a href="#" class="btn btn--outline btn--block">このプランで登録</a>
+        </article>
+
+        <article class="plan">
+          <span class="plan__badge">17%お得</span>
+          <h3 class="plan__name">6ヶ月プラン</h3>
+          <p class="plan__price"><span class="plan__num">2,500</span><small>円 / 6ヶ月</small></p>
+          <p class="plan__unit">月あたり 約417円</p>
+          <p class="plan__note">直前期を含めて半年間、継続して受験できます。</p>
+          <a href="#" class="btn btn--outline btn--block">このプランで登録</a>
+        </article>
+
+        <article class="plan plan--featured">
+          <span class="plan__badge">25%お得・いちばん人気</span>
+          <h3 class="plan__name">1年プラン</h3>
+          <p class="plan__price"><span class="plan__num">4,500</span><small>円 / 年</small></p>
+          <p class="plan__unit">月あたり 375円</p>
+          <p class="plan__note">12回分の模試で、1年間の推移をまるごと記録します。</p>
+          <a href="#" class="btn btn--solid btn--block">このプランで登録</a>
+        </article>
+
+      </div>
+
+      <p class="plan-foot">
+        表示価格はすべて税込です。お支払いはクレジットカードまたは口座振替に対応しています。
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 6. 会社情報 ============ -->
+  <section class="section section--soft" id="company">
+    <div class="container">
+      <div class="company">
+
+        <header class="section__head section__head--left">
+          <p class="eyebrow">Company</p>
+          <h2 class="section__title">会社情報</h2>
+          <p class="section__lead">
+            「受験生の現在地を、いつでも正確に」を掲げ、
+            司法試験受験生に向けた模試と情報基盤の提供を行っています。
+          </p>
+        </header>
+
+        <table class="company__table">
+          <tbody>
+            <tr><th scope="row">会社名</th><td>株式会社リーガル・バイブス（REGAL VIVES Inc.）</td></tr>
+            <tr><th scope="row">設立</th><td>2027年2月1日</td></tr>
+            <tr><th scope="row">代表取締役</th><td>雫石・けーじろう</td></tr>
+            <tr><th scope="row">所在地</th><td>〒604-8006 京都府京都市中京区河原町通三条上ル恵比須町427 VIVESビル 3F</td></tr>
+            <tr><th scope="row">資本金</th><td>50万円</td></tr>
+            <tr><th scope="row">従業員数</th><td>2名</td></tr>
+            <tr><th scope="row">事業内容</th><td>司法試験模試の企画・実施／法律記事プラットフォームの運営／受験生コミュニティの運営</td></tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7. 登録 CTA ============ -->
+  <section class="cta" id="purchase">
+    <div class="container cta__inner">
+      <p class="eyebrow eyebrow--light">Get Started</p>
+      <h2 class="cta__title">次の模試から、現在地を記録しはじめる。</h2>
+      <p class="cta__lead">
+        登録したその日から、模試・記事・コミュニティのすべてが使えます。
+        初月は無料、解約はいつでもマイページから行えます。
+      </p>
+
+      <div class="cta__actions">
+        <a href="#plans" class="btn btn--light btn--lg">月額500円ではじめる</a>
+        <a href="#" class="btn btn--outline-light btn--lg">無料で記事を読む</a>
+      </div>
+
+      <p class="cta__note">1ヶ月 500円 ／ 3ヶ月 1,500円 ／ 6ヶ月 2,500円 ／ 1年 4,500円（税込）</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ フッター ============ -->
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__brand">
+      <span class="logo__mark" aria-hidden="true">RV</span>
+      <p class="site-footer__desc">
+        株式会社リーガル・バイブス<br>
+        京都府京都市中京区河原町通三条上ル恵比須町427 VIVESビル 3F
+      </p>
+    </div>
+
+    <nav class="site-footer__nav" aria-label="フッターナビゲーション">
+      <ul>
+        <li><a href="#concept">コンセプト</a></li>
+        <li><a href="#exams">模試</a></li>
+        <li><a href="#articles">記事</a></li>
+        <li><a href="community.html">コミュニティ</a></li>
+        <li><a href="#news">お知らせ</a></li>
+        <li><a href="#plans">料金プラン</a></li>
+        <li><a href="#company">会社情報</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="container site-footer__bottom">
+    <p class="site-footer__disclaimer">※ 本サイトは架空の企業・サービスによるデモンストレーション用のページです。</p>
+    <p class="site-footer__copy">&copy; 2026 REGAL VIVES Inc.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
