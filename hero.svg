@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" preserveAspectRatio="xMidYMid slice">
+  <!-- REGAL VIVES キービジュアル
+       ロゴを中央に据えたエンブレム。要素は中央に寄せてあるため、
+       4:5 でも 16:10 でも切り抜きで欠けません。
+       写真に差し替える場合は index.html の <img> の src を変更してください。 -->
+  <defs>
+    <linearGradient id="rv-bg" x1="0" y1="0" x2=".35" y2="1">
+      <stop offset="0"   stop-color="#33383e"/>
+      <stop offset=".5"  stop-color="#1b1d20"/>
+      <stop offset="1"   stop-color="#0c0e10"/>
+    </linearGradient>
+
+    <radialGradient id="rv-glow" cx=".5" cy=".46" r=".58">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".14"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="800" height="1000" fill="url(#rv-bg)"/>
+  <rect width="800" height="1000" fill="url(#rv-glow)"/>
+
+  <!-- エンブレムの輪 -->
+  <circle cx="400" cy="500" r="210" fill="none" stroke="#ffffff" stroke-opacity=".16" stroke-width="1.5"/>
+  <!-- 輪の上部だけを金でなぞるアクセント -->
+  <path d="M295 318.1 A210 210 0 0 1 505 318.1"
+        fill="none" stroke="#b1904f" stroke-width="3" stroke-linecap="round"/>
+
+  <g font-family="Helvetica Neue, Helvetica, Arial, sans-serif" text-anchor="middle">
+    <!-- モノグラム -->
+    <text x="405" y="505" font-size="132" font-weight="700"
+          letter-spacing="10" fill="#ffffff">RV</text>
+
+    <!-- 区切り線 -->
+    <line x1="340" y1="558" x2="460" y2="558" stroke="#b1904f" stroke-width="2"/>
+
+    <!-- ワードマーク -->
+    <text x="406.5" y="620" font-size="30" font-weight="700"
+          letter-spacing="13" fill="#ffffff" fill-opacity=".92">REGAL VIVES</text>
+  </g>
+</svg>
