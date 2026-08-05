@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>コミュニティ｜REGAL VIVES</title>
+<meta name="description" content="REGAL VIVES のコミュニティは、司法試験受験生のための匿名オープンチャットです。登録に必要なのは大学・大学院名とニックネームの2つだけ。">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">本文へスキップ</a>
+
+<!-- ============ ヘッダー ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="container site-header__inner">
+    <a class="logo" href="index.html">
+      <span class="logo__mark" aria-hidden="true">RV</span>
+      <span class="logo__text">
+        <strong>REGAL VIVES</strong>
+        <small>Bar Exam Platform</small>
+      </span>
+    </a>
+
+    <nav class="gnav" id="gnav" aria-label="メインナビゲーション">
+      <ul class="gnav__list">
+        <li><a href="#">マイページ</a></li>
+        <li><a href="index.html#news">お知らせ</a></li>
+        <li><a href="index.html#articles">記事</a></li>
+        <li><a href="community.html" aria-current="page">コミュニティ</a></li>
+
+        <li class="gnav__sub">
+          <a href="index.html#concept">コンセプト</a>
+          <a href="index.html#exams">模試</a>
+          <a href="index.html#plans">料金プラン</a>
+          <a href="index.html#company">会社情報</a>
+        </li>
+
+        <li class="gnav__cta"><a href="index.html#plans" class="btn btn--sm btn--solid">登録する</a></li>
+      </ul>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="gnav">
+      <span class="nav-toggle__bars" aria-hidden="true"></span>
+      <span class="sr-only">メニューを開く</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="chat-page">
+  <div class="container">
+
+    <header class="chat-head">
+      <p class="eyebrow">Community</p>
+      <h1 class="chat-head__title">匿名オープンチャット</h1>
+      <p class="chat-head__lead">
+        本名もメールアドレスも要りません。登録するのは
+        <strong>大学・大学院名</strong>と<strong>ニックネーム</strong>の2つだけ。
+        同じ試験を目指す人たちが、いつでも書き込める場所です。
+      </p>
+
+      <!-- 参加後にここへプロフィールが表示されます -->
+      <div class="chat-me" id="chatMe" hidden>
+        <span class="chat-me__avatar" id="chatMeAvatar" aria-hidden="true"></span>
+        <span class="chat-me__body">
+          <span class="chat-me__name" id="chatMeName"></span>
+          <span class="chat-me__school" id="chatMeSchool"></span>
+        </span>
+        <button type="button" class="chat-me__edit" id="chatMeEdit">変更</button>
+      </div>
+    </header>
+
+    <div class="chat-layout">
+
+      <!-- ルーム一覧 -->
+      <aside class="chat-rooms" aria-label="ルーム一覧">
+        <p class="chat-rooms__label">ルーム</p>
+        <ul class="chat-rooms__list" id="chatRooms">
+          <li><button type="button" class="chat-room is-active" data-room="general">
+            <span class="chat-room__name"># 全体</span><span class="chat-room__count">412</span></button></li>
+          <li><button type="button" class="chat-room" data-room="tantou">
+            <span class="chat-room__name"># 短答式</span><span class="chat-room__count">268</span></button></li>
+          <li><button type="button" class="chat-room" data-room="ronbun">
+            <span class="chat-room__name"># 論文式</span><span class="chat-room__count">301</span></button></li>
+          <li><button type="button" class="chat-room" data-room="yobi">
+            <span class="chat-room__name"># 予備試験</span><span class="chat-room__count">184</span></button></li>
+          <li><button type="button" class="chat-room" data-room="plan">
+            <span class="chat-room__name"># 学習計画</span><span class="chat-room__count">157</span></button></li>
+          <li><button type="button" class="chat-room" data-room="goukaku">
+            <span class="chat-room__name"># 合格者に聞く</span><span class="chat-room__count">96</span></button></li>
+        </ul>
+
+        <p class="chat-rooms__note">
+          発言に表示されるのは、ニックネームと大学・大学院名だけです。
+        </p>
+      </aside>
+
+      <!-- チャット本体 -->
+      <section class="chat-main" aria-label="チャット">
+
+        <div class="chat-main__head">
+          <div>
+            <h2 class="chat-main__title" id="chatRoomTitle"># 全体</h2>
+            <p class="chat-main__desc" id="chatRoomDesc">科目を問わず、なんでも書き込めるルームです。</p>
+          </div>
+          <span class="chat-main__badge">24時間開放</span>
+        </div>
+
+        <ol class="chat-log" id="chatLog"></ol>
+
+        <form class="chat-form" id="chatForm">
+          <label class="sr-only" for="chatInput">メッセージ</label>
+          <textarea class="chat-form__input" id="chatInput" rows="1"
+                    placeholder="メッセージを入力（Enterで送信 / Shift+Enterで改行）" disabled></textarea>
+          <button type="submit" class="btn btn--solid chat-form__send" id="chatSend" disabled>送信</button>
+        </form>
+
+        <!-- 未登録のときだけ表示される参加フォーム -->
+        <div class="chat-gate" id="chatGate">
+          <form class="chat-gate__box" id="chatGateForm">
+            <p class="eyebrow">Join</p>
+            <h2 class="chat-gate__title">チャットに参加する</h2>
+            <p class="chat-gate__lead">
+              登録は次の2項目だけです。本名・メールアドレス・電話番号は一切登録しません。
+            </p>
+
+            <div class="field">
+              <label class="field__label" for="gateSchool">大学・大学院名</label>
+              <input class="field__input" id="gateSchool" name="school" type="text"
+                     list="schoolList" maxlength="30" required
+                     placeholder="例：京都大学法科大学院" autocomplete="off">
+              <datalist id="schoolList">
+                <option value="京都大学法科大学院"></option>
+                <option value="東京大学法科大学院"></option>
+                <option value="早稲田大学法科大学院"></option>
+                <option value="慶應義塾大学法科大学院"></option>
+                <option value="中央大学法科大学院"></option>
+                <option value="大阪大学法科大学院"></option>
+                <option value="神戸大学法科大学院"></option>
+                <option value="一橋大学法科大学院"></option>
+              </datalist>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="gateName">ニックネーム</label>
+              <input class="field__input" id="gateName" name="nickname" type="text"
+                     maxlength="12" required placeholder="例：あおい" autocomplete="off">
+              <p class="field__help">全角12文字まで。いつでも変更できます。</p>
+            </div>
+
+            <p class="chat-gate__error" id="gateError" role="alert" hidden></p>
+
+            <button type="submit" class="btn btn--solid btn--block">この内容で参加する</button>
+
+            <p class="chat-gate__note">
+              書き込みは匿名です。個人が特定できる情報（本名・受験番号・勤務先など）は
+              投稿しないでください。
+            </p>
+          </form>
+        </div>
+
+      </section>
+    </div>
+
+    <p class="chat-disclaimer">
+      ※ このページはデモです。サーバーに接続していないため、投稿はこのブラウザの中だけに表示され、
+      ほかの人には届きません。ページを再読み込みすると消えます。
+    </p>
+
+  </div>
+</main>
+
+<!-- ============ フッター ============ -->
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__brand">
+      <span class="logo__mark" aria-hidden="true">RV</span>
+      <p class="site-footer__desc">
+        株式会社リーガル・バイブス<br>
+        京都府京都市中京区河原町通三条上ル恵比須町427 VIVESビル 3F
+      </p>
+    </div>
+
+    <nav class="site-footer__nav" aria-label="フッターナビゲーション">
+      <ul>
+        <li><a href="index.html#concept">コンセプト</a></li>
+        <li><a href="index.html#exams">模試</a></li>
+        <li><a href="index.html#articles">記事</a></li>
+        <li><a href="community.html">コミュニティ</a></li>
+        <li><a href="index.html#news">お知らせ</a></li>
+        <li><a href="index.html#plans">料金プラン</a></li>
+        <li><a href="index.html#company">会社情報</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="container site-footer__bottom">
+    <p class="site-footer__disclaimer">※ 本サイトは架空の企業・サービスによるデモンストレーション用のページです。</p>
+    <p class="site-footer__copy">&copy; 2026 REGAL VIVES Inc.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/chat.js"></script>
+</body>
+</html>
